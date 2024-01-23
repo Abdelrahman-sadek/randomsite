@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random URL Loader</title>
+</head>
+<body>
+
+  <h1>Random URL Loader</h1>
+
+  <form id="urlForm">
+    <label for="urlInput">Loaded URL:</label>
+    <input type="text" id="urlInput" readonly>
+    <br>
+    <button type="button" onclick="loadRandomUrl()">Load Random URL</button>
+  </form>
+
+  <script>
+    // Array of URLs
+    var urls = [
+      "https://example1.com",
+      "https://example2.com",
+      "https://example3.com",
+      // Add more URLs as needed
+    ];
+
+    function loadRandomUrl() {
+      // Get a random index from the array
+      var randomIndex = Math.floor(Math.random() * urls.length);
+
+      // Get the URL at the random index
+      var randomUrl = urls[randomIndex];
+
+      // Display the random URL in the input field
+      document.getElementById("urlInput").value = randomUrl;
+
+      // Open the random URL in a new tab/window (optional)
+      // window.open(randomUrl, "_blank");
+    }
+  </script>
+
+</body>
+</html>
